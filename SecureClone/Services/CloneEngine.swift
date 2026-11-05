@@ -21,7 +21,10 @@ struct FileCloneOutcome {
     let sourceHash: String
     let destinationHashes: [URL: String]
     let verified: [URL: Bool]
-}
+      /// True when every destination's hash matched the source.
+      var allVerified: Bool {
+          !verified.isEmpty && verified.values.allSatisfy { $0 }
+      }}
 
 enum CloneEngineError: Error {
     case cannotCreateDestination(URL)
