@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+      SANDBOX NOTE:
+      A read-write file-access tool that touches arbitrary external volumes
+      is easiest to develop with the sandbox DISABLED (set to false below).
+      For Mac App Store distribution you must enable the sandbox (true) and
+      use security-scoped bookmarks via NSOpenPanel for each volume the user
+      selects. For your own / on-set use, disabling the sandbox is fine.
+    -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+
+    <!-- If you DO enable the sandbox, you'll also want these: -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    <key>com.apple.security.files.bookmarks.app-scope</key>
+    <true/>
+</dict>
+</plist>
